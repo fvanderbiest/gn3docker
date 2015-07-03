@@ -15,8 +15,7 @@ RUN apt-get update && \
 
 RUN rm -rf /var/lib/tomcat8/webapps/*
 
-ADD http://downloads.sourceforge.net/project/geonetwork/GeoNetwork_opensource/v3.0.0/geonetwork.war /var/lib/tomcat8/webapps/geonetwork.war
-
+ADD http://build.georchestra.org/geonetwork-3.0.1-SNAPSHOT.war /var/lib/tomcat8/webapps/geonetwork.war
 
 RUN mkdir -p /var/lib/tomcat8/webapps/geonetwork && \
     unzip -e /var/lib/tomcat8/webapps/geonetwork.war -d /var/lib/tomcat8/webapps/geonetwork && \
