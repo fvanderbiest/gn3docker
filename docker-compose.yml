@@ -1,0 +1,16 @@
+database:
+    build: ./postgresql
+    ports:
+        - "5432"
+    volumes:
+        - ~/docker/tmp:/var/log/postgresql
+
+geonetwork:
+    build: ./geonetwork
+    privileged: true
+    ports:
+        - "8080"
+    links:
+        - database:postgresql_host
+    volumes:
+        - ~/docker/tmp:/tmp
