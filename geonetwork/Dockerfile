@@ -11,7 +11,9 @@ MAINTAINER PSC "francois.vanderbiest@camptocamp.com"
 ENV DEBIAN_FRONTEND noninterative
 
 RUN apt-get update && \
-    apt-get install -y tomcat8 unzip
+    apt-get install -y tomcat8 unzip && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN rm -rf /var/lib/tomcat8/webapps/*
 

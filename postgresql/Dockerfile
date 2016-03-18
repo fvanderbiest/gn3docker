@@ -9,7 +9,9 @@ MAINTAINER PSC "francois.vanderbiest@camptocamp.com"
 ENV DEBIAN_FRONTEND noninterative
 
 RUN apt-get update && \
-    apt-get install -y postgresql-9.4
+    apt-get install -y postgresql-9.4 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # Run the rest of the commands as the ``postgres`` user
 USER postgres
