@@ -16,8 +16,8 @@ RUN apt-get update && \
 # Run the rest of the commands as the ``postgres`` user
 USER postgres
 
-# Create a PostgreSQL role named ``georchestra`` with ``georchestra`` as the password and
-# then create a database ``georchestra`` owned by the ``georchestra`` role.
+# Create a PostgreSQL role named ``geonetwork`` with ``geonetwork`` as the password and
+# then create a database ``geonetwork`` owned by the ``geonetwork`` role.
 RUN /etc/init.d/postgresql start && \
     psql -c "CREATE USER geonetwork WITH SUPERUSER PASSWORD 'geonetwork';" && \
     createdb -O geonetwork geonetwork && \
